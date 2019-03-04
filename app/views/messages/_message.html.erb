@@ -1,0 +1,7 @@
+<div class="ui list">
+  <% @message.each do |message| %>
+    <div class="item">
+      <%= message.user.username %>: <%= message.body %>
+    </div>
+  <% end %>
+</div>
