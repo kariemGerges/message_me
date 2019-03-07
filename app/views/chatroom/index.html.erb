@@ -11,21 +11,22 @@
             <div class="event">
               <div class="content">
                 <div class="summary">
-                  <%= render 'messages/message' %>
+                  <%= render @messages %>
                 </div>
               </div>
             </div>
         </div>
       </div>
       <div class="extra content">
-        <form class="ui reply form">
+        <%= form_for(@message, html:{ class: "ui reply form", role: "form"}, url: message_path) do |m| %>
           <div class="field">
             <div class="ui fluid icon input">
-                <input type="text" placeholder="Enter message...">
-              <i class="bordered inverted blue edit icon"></i>
+                <%= m.text_field :body, placeholder: "Enter message..." %>
+
+              <%= m.button '<i class="bordered inverted blue edit icon"></i>'.html_safe %>
           </div>
       </div>
-  </form>
+  <% end %>
     </div>
   </div>
 </div>
