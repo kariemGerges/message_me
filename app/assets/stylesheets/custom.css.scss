@@ -8,3 +8,15 @@
 .center {
   text-align: center;
 }
+
+
+#msg {
+  height: 15em;
+  overflow: auto;
+}
+
+.input {
+  button {
+    display: none;
+  }
+}
